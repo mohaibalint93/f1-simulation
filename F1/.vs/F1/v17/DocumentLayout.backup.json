@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "Z:\\202502 c# project\\F1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{510F24B2-9CE2-4F2E-913A-52E9A13FC5DD}|F1.csproj|z:\\202502 c# project\\f1\\f1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{510F24B2-9CE2-4F2E-913A-52E9A13FC5DD}|F1.csproj|solutionrelative:f1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{510F24B2-9CE2-4F2E-913A-52E9A13FC5DD}|F1.csproj|z:\\202502 c# project\\f1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{510F24B2-9CE2-4F2E-913A-52E9A13FC5DD}|F1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{510F24B2-9CE2-4F2E-913A-52E9A13FC5DD}|F1.csproj|z:\\202502 c# project\\f1\\pilots.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{510F24B2-9CE2-4F2E-913A-52E9A13FC5DD}|F1.csproj|solutionrelative:pilots.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{510F24B2-9CE2-4F2E-913A-52E9A13FC5DD}|F1.csproj|z:\\202502 c# project\\f1\\driver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{510F24B2-9CE2-4F2E-913A-52E9A13FC5DD}|F1.csproj|solutionrelative:driver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{510F24B2-9CE2-4F2E-913A-52E9A13FC5DD}|F1.csproj|z:\\202502 c# project\\f1\\track.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{510F24B2-9CE2-4F2E-913A-52E9A13FC5DD}|F1.csproj|solutionrelative:track.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{510F24B2-9CE2-4F2E-913A-52E9A13FC5DD}|F1.csproj|z:\\202502 c# project\\f1\\team.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{510F24B2-9CE2-4F2E-913A-52E9A13FC5DD}|F1.csproj|solutionrelative:team.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{510F24B2-9CE2-4F2E-913A-52E9A13FC5DD}|F1.csproj|z:\\202502 c# project\\f1\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{510F24B2-9CE2-4F2E-913A-52E9A13FC5DD}|F1.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "pilots.txt",
+              "DocumentMoniker": "Z:\\202502 c# project\\F1\\pilots.txt",
+              "RelativeDocumentMoniker": "pilots.txt",
+              "ToolTip": "Z:\\202502 c# project\\F1\\pilots.txt",
+              "RelativeToolTip": "pilots.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-02-14T09:52:44.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "README.md",
+              "DocumentMoniker": "Z:\\202502 c# project\\F1\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "Z:\\202502 c# project\\F1\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-02-14T09:52:43.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Track.cs",
+              "DocumentMoniker": "Z:\\202502 c# project\\F1\\Track.cs",
+              "RelativeDocumentMoniker": "Track.cs",
+              "ToolTip": "Z:\\202502 c# project\\F1\\Track.cs",
+              "RelativeToolTip": "Track.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T09:28:49.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Team.cs",
+              "DocumentMoniker": "Z:\\202502 c# project\\F1\\Team.cs",
+              "RelativeDocumentMoniker": "Team.cs",
+              "ToolTip": "Z:\\202502 c# project\\F1\\Team.cs",
+              "RelativeToolTip": "Team.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T09:16:39.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Driver.cs",
+              "DocumentMoniker": "Z:\\202502 c# project\\F1\\Driver.cs",
+              "RelativeDocumentMoniker": "Driver.cs",
+              "ToolTip": "Z:\\202502 c# project\\F1\\Driver.cs",
+              "RelativeToolTip": "Driver.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T09:16:28.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "F1",
+              "DocumentMoniker": "Z:\\202502 c# project\\F1\\F1.csproj",
+              "RelativeDocumentMoniker": "F1.csproj",
+              "ToolTip": "Z:\\202502 c# project\\F1\\F1.csproj",
+              "RelativeToolTip": "F1.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-14T09:16:15.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "Z:\\202502 c# project\\F1\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "Z:\\202502 c# project\\F1\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T09:13:48.221Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
