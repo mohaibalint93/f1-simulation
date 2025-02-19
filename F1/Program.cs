@@ -211,6 +211,7 @@ namespace F1
             bool a = true;
             while (a == true)
             {
+                DriversTeams();
                 a = Menu();
             }
         }
@@ -240,34 +241,34 @@ namespace F1
             teams.Add(sauber);
 
             mclaren.AddDriver(new Driver("Lando Norris",8,0));
-            mclaren.AddDriver(new Driver("Oscar Piastri", 8, 0));
+            mclaren.AddDriver(new Driver("Oscar Piastri", 7, 0));
 
             ferrari.AddDriver(new Driver("Charles Leclerc", 9, 0));
             ferrari.AddDriver(new Driver("Lewis Hamilton", 9, 0));
 
             racingBulls.AddDriver(new Driver("Max Verstappen", 9, 0));
-            racingBulls.AddDriver(new Driver("Liam Lawson", 6, 0));
+            racingBulls.AddDriver(new Driver("Liam Lawson", 5, 0));
 
-            mercedes.AddDriver(new Driver("George Russell", 8, 0));
-            mercedes.AddDriver(new Driver("Andrea Kimi Antonelli", 6, 0));
+            mercedes.AddDriver(new Driver("George Russell", 7, 0));
+            mercedes.AddDriver(new Driver("Andrea Kimi Antonelli", 5, 0));
 
             astonMartin.AddDriver(new Driver("Fernando Alonso", 7, 0));
-            astonMartin.AddDriver(new Driver("Lance Stroll", 5, 0));
+            astonMartin.AddDriver(new Driver("Lance Stroll", 2, 0));
 
-            alpine.AddDriver(new Driver("Pierre Gasly", 7, 0));
-            alpine.AddDriver(new Driver("Jack Doohan", 5, 0));
+            alpine.AddDriver(new Driver("Pierre Gasly", 5, 0));
+            alpine.AddDriver(new Driver("Jack Doohan", 4, 0));
 
-            haas.AddDriver(new Driver("Esteban Ocon", 7, 0));
-            haas.AddDriver(new Driver("Oliver Bearman", 6, 0));
+            haas.AddDriver(new Driver("Esteban Ocon", 5, 0));
+            haas.AddDriver(new Driver("Oliver Bearman", 4, 0));
 
-            williams.AddDriver(new Driver("Alexander Albon", 7, 0));
-            williams.AddDriver(new Driver("Carlos Sainz Jr.", 7, 0));
+            williams.AddDriver(new Driver("Alexander Albon", 5, 0));
+            williams.AddDriver(new Driver("Carlos Sainz Jr.", 6, 0));
 
-            vcarb.AddDriver(new Driver("Yuki Tsunoda", 6, 0));
-            vcarb.AddDriver(new Driver("Isack Hadjar", 5, 0));
+            vcarb.AddDriver(new Driver("Yuki Tsunoda", 4, 0));
+            vcarb.AddDriver(new Driver("Isack Hadjar", 3, 0));
 
-            sauber.AddDriver(new Driver("Nico Hulkenberg", 6, 0));
-            sauber.AddDriver(new Driver("Gabriel Bortoleto", 6, 0));
+            sauber.AddDriver(new Driver("Nico Hulkenberg", 5, 0));
+            sauber.AddDriver(new Driver("Gabriel Bortoleto", 5, 0));
 
 
         }
@@ -377,16 +378,86 @@ namespace F1
             return formattedTime;
         }
 
+        static void TeamsPrint()
+        {
+            Console.Clear();
+            for (int j = 0; j < 10; j++)
+            {
+                
+                switch (teams[j].TeamName)
+                {
+                    case "Ferrari":
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        break;
+                    case "McLaren-Mercedes":
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        break;
+                    case "Racing Bulls-Honda RBPT":
+                        Console.ForegroundColor = ConsoleColor.DarkBlue;
+                        break;
+                    case "Mercedes":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        break;
+                    case "Aston Martin Aramco-Mercedes":
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        break;
+                    case "Alpine-Renault":
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        break;
+                    case "Haas-Ferrari":
+                        Console.ForegroundColor = ConsoleColor.White;
+                        break;
+                    case "Williams":
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        break;
+                    case "Visa Cash App Racing Bulls":
+                        Console.ForegroundColor = ConsoleColor.DarkCyan;
+                        break;
+                    case "Kick Sauber":
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        break;
+                }
+                Console.WriteLine("---------------------------------");
+                Console.WriteLine(teams[j].TeamName);
+                Console.WriteLine();
+
+                foreach (var item in teams[j].Drivers)
+                {
+                    Console.WriteLine(item.Name);
+                    Console.WriteLine(" - Points: " + item.Points);
+                }
+                Console.WriteLine("---------------------------------");
+                Console.ResetColor();
+            }
+        }
+
         static bool Menu()
         {
             Console.Clear();
             Console.WriteLine("0. Kilépés");
             Console.WriteLine("1. Szezon szimulálásának indítása");
+            Console.WriteLine("2. Csapatok megtekintése");
             string valasz = Console.ReadLine();
+            if (valasz == "2")
+            {
+                TeamsPrint();
+                Console.WriteLine();
+                Console.Write("<ENTER>");
+                Console.ReadKey();
+                return true;
+            }
             if (valasz == "1")
             {
                 Console.Clear();
-                DriversTeams();
+
+                for (int j = 0; j < 10; j++)
+                {
+                    foreach (var item in teams[j].Drivers)
+                    {
+                        item.Points = 0;
+                    }
+                }
+
                 for (int i = 0; i < tracks.Length; i++)
                 {
                     //Console.WriteLine(TimeToSeconds(tracks[i].BestLapTime));
@@ -462,7 +533,7 @@ namespace F1
                             Console.ForegroundColor = ConsoleColor.Green;
                             break;
                     }
-                    Console.WriteLine(index + ". " + currentTeam.TeamName + " (" + currentTeam.Drivers[0].Name + ", " + currentTeam.Drivers[1].Name + ") " + "Total Points: " + item);
+                    Console.WriteLine(index + ". " + currentTeam.TeamName + " (" + currentTeam.Drivers[0].Name + " Points: " + currentTeam.Drivers[0].Points + ", " + currentTeam.Drivers[1].Name + " Points: " + currentTeam.Drivers[1].Points + ") " + "Total Points: " + item);
                     Console.ResetColor();
                 }
 
@@ -494,11 +565,23 @@ namespace F1
         {
             Random rnd = new Random();
             int weather = 0;
+            
             for (int j = 0; j < 10; j++)
             {
+                int rand = rnd.Next(0, 100);
+                int kiallasszam;
+                if (rand >= 70)
+                {
+                    kiallasszam = 2;
+                }
+                else
+                {
+                    kiallasszam = 1;
+                }
+
                 foreach (var item in teams[j].Drivers)
                 {
-                    item.CurrentTime = 0;
+                    item.CurrentTime = (int)(100 * tracks[roundnumber].PitStopTime * kiallasszam);
                 }
             }
 
@@ -516,6 +599,7 @@ namespace F1
             {
                 Console.WriteLine(" - Zuhogó eső");
             }
+            
             for (int i = 0; i < tracks[roundnumber].Laps; i++)
             {
 
@@ -523,7 +607,7 @@ namespace F1
                 {                    
                     foreach (var item in teams[j].Drivers)
                     {
-                        item.CurrentTime += rnd.Next(TimeToSeconds(tracks[roundnumber].BestLapTime)*1000, TimeToSeconds(tracks[roundnumber].WorstLapTime)*1000-item.DriverLevel*200);
+                        item.CurrentTime += rnd.Next(TimeToSeconds(tracks[roundnumber].BestLapTime)*1000, TimeToSeconds(tracks[roundnumber].WorstLapTime)*1000-item.DriverLevel*100);
                         if (weather >= 40)
                         {
                             item.CurrentTime += 2000;
