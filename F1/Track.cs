@@ -28,7 +28,6 @@ namespace F1
         
         public void DisplayTrackInfo()
         {
-            Console.WriteLine();
             Console.WriteLine($"Pálya: {Name}");
             Console.WriteLine($"Legjobb köridő (2024): {BestLapTime}");
             Console.WriteLine($"Legrosszabb köridő (2024): {WorstLapTime}");

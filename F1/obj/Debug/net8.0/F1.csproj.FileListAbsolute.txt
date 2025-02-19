@@ -13,3 +13,18 @@ E:\Prog\f1-simulation\F1\obj\Debug\net8.0\refint\F1.dll
 E:\Prog\f1-simulation\F1\obj\Debug\net8.0\F1.pdb
 E:\Prog\f1-simulation\F1\obj\Debug\net8.0\F1.genruntimeconfig.cache
 E:\Prog\f1-simulation\F1\obj\Debug\net8.0\ref\F1.dll
+Z:\202502 c# project\f1-simulation\F1\bin\Debug\net8.0\F1.exe
+Z:\202502 c# project\f1-simulation\F1\bin\Debug\net8.0\F1.deps.json
+Z:\202502 c# project\f1-simulation\F1\bin\Debug\net8.0\F1.runtimeconfig.json
+Z:\202502 c# project\f1-simulation\F1\bin\Debug\net8.0\F1.dll
+Z:\202502 c# project\f1-simulation\F1\bin\Debug\net8.0\F1.pdb
+Z:\202502 c# project\f1-simulation\F1\obj\Debug\net8.0\F1.GeneratedMSBuildEditorConfig.editorconfig
+Z:\202502 c# project\f1-simulation\F1\obj\Debug\net8.0\F1.AssemblyInfoInputs.cache
+Z:\202502 c# project\f1-simulation\F1\obj\Debug\net8.0\F1.AssemblyInfo.cs
+Z:\202502 c# project\f1-simulation\F1\obj\Debug\net8.0\F1.csproj.CoreCompileInputs.cache
+Z:\202502 c# project\f1-simulation\F1\obj\Debug\net8.0\F1.sourcelink.json
+Z:\202502 c# project\f1-simulation\F1\obj\Debug\net8.0\F1.dll
+Z:\202502 c# project\f1-simulation\F1\obj\Debug\net8.0\refint\F1.dll
+Z:\202502 c# project\f1-simulation\F1\obj\Debug\net8.0\F1.pdb
+Z:\202502 c# project\f1-simulation\F1\obj\Debug\net8.0\F1.genruntimeconfig.cache
+Z:\202502 c# project\f1-simulation\F1\obj\Debug\net8.0\ref\F1.dll

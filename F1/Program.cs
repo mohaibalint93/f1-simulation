@@ -208,64 +208,11 @@ namespace F1
         };
         static void Main(string[] args)
         {
-            
-            DriversTeams();
-            for (int i = 0; i < tracks.Length; i++)
+            bool a = true;
+            while (a == true)
             {
-                //Console.WriteLine(TimeToSeconds(tracks[i].BestLapTime));
-                tracks[i].DisplayTrackInfo();
-                OneRound(i);
+                a = Menu();
             }
-
-            int[] driverStanding = new int[20];
-            int[] constructorStanding = new int[10];
-            int index = -1;
-
-            for (int j = 0; j < 10; j++)
-            {
-                foreach (var item in teams[j].Drivers)
-                {
-                    index++;
-                    driverStanding[index] = item.Points;
-                }
-            }
-
-            for (int j = 0; j < 10; j++)
-            {
-                constructorStanding[j] = teams[j].Drivers[0].Points + teams[j].Drivers[1].Points;
-                
-            }
-            Console.WriteLine();
-            Console.WriteLine("****************************************");
-            Console.WriteLine("Konstruktőri Világbajnokság végeredmény:");
-            Console.WriteLine("****************************************");
-            Console.WriteLine();
-            index = 0;
-            foreach (var item in CseresRendez2(constructorStanding))
-            {
-                index++;
-                Team currentTeam = SearchTeambyPoint(item);
-                Console.WriteLine(index + ". " + currentTeam.TeamName + " " + item);
-
-            }
-
-            Console.WriteLine();
-            Console.WriteLine("**********************************");
-            Console.WriteLine("Egyéni Világbajnokság végeredmény:");
-            Console.WriteLine("**********************************");
-            Console.WriteLine();
-            index = 0;
-            foreach (int item in CseresRendez2(driverStanding))
-            {
-                Console.WriteLine(item);
-                index++;
-                Driver currentdriver = SearchDriverbyPoint(item);
-
-                Console.WriteLine(index + ". " + currentdriver.Name + " Total Points: " + currentdriver.Points);
-            }
-
-            
-
         }
         static void DriversTeams()
         {
@@ -427,6 +374,77 @@ namespace F1
 
             string formattedTime = string.Format("{0}:{1:D2}.{2:D3}", hours, minutes, seconds * 1000 + milliseconds);
             return formattedTime;
+        }
+
+        static bool Menu()
+        {
+            Console.Clear();
+            Console.WriteLine("0. Kilépés");
+            Console.WriteLine("1. Szezon szimulálásának indítása");
+            string valasz = Console.ReadLine();
+            if (valasz == "1")
+            {
+                Console.Clear();
+                DriversTeams();
+                for (int i = 0; i < tracks.Length; i++)
+                {
+                    //Console.WriteLine(TimeToSeconds(tracks[i].BestLapTime));
+                    Console.WriteLine();
+                    Console.WriteLine(i + 1 + ". forduló");
+                    tracks[i].DisplayTrackInfo();
+                    OneRound(i);
+                }
+
+                int[] driverStanding = new int[20];
+                int[] constructorStanding = new int[10];
+                int index = -1;
+
+                for (int j = 0; j < 10; j++)
+                {
+                    foreach (var item in teams[j].Drivers)
+                    {
+                        index++;
+                        driverStanding[index] = item.Points;
+                    }
+                }
+
+                for (int j = 0; j < 10; j++)
+                {
+                    constructorStanding[j] = teams[j].Drivers[0].Points + teams[j].Drivers[1].Points;
+
+                }
+                Console.WriteLine();
+                Console.WriteLine("****************************************");
+                Console.WriteLine("Konstruktőri Világbajnokság végeredmény:");
+                Console.WriteLine("****************************************");
+                Console.WriteLine();
+                index = 0;
+                foreach (var item in CseresRendez2(constructorStanding))
+                {
+                    index++;
+                    Team currentTeam = SearchTeambyPoint(item);
+                    Console.WriteLine(index + ". " + currentTeam.TeamName + " " + item);
+
+                }
+
+                Console.WriteLine();
+                Console.WriteLine("**********************************");
+                Console.WriteLine("Egyéni Világbajnokság végeredmény:");
+                Console.WriteLine("**********************************");
+                Console.WriteLine();
+                index = 0;
+                foreach (int item in CseresRendez2(driverStanding))
+                {
+                    //Console.WriteLine(item);
+                    index++;
+                    Driver currentdriver = SearchDriverbyPoint(item);
+
+                    Console.WriteLine(index + ". " + currentdriver.Name + " Total Points: " + currentdriver.Points);
+                }
+                Console.ReadLine();
+                return true;
+            }
+            return false;
         }
 
         static void OneRound(int roundnumber)
