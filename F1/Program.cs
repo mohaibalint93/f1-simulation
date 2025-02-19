@@ -214,6 +214,7 @@ namespace F1
                 a = Menu();
             }
         }
+
         static void DriversTeams()
         {
             Team mclaren = new Team("McLaren-Mercedes");
@@ -393,6 +394,10 @@ namespace F1
                     Console.WriteLine(i + 1 + ". forduló");
                     tracks[i].DisplayTrackInfo();
                     OneRound(i);
+                    Console.WriteLine();
+                    Console.Write("Következő forduló <ENTER>");
+                    Console.ReadKey();
+                    Console.Clear();
                 }
 
                 int[] driverStanding = new int[20];
@@ -423,23 +428,61 @@ namespace F1
                 {
                     index++;
                     Team currentTeam = SearchTeambyPoint(item);
-                    Console.WriteLine(index + ". " + currentTeam.TeamName + " " + item);
 
+                    switch(currentTeam.TeamName)
+                    {
+                        case "Ferrari":
+                            Console.ForegroundColor = ConsoleColor.DarkRed;
+                            break;
+                        case "McLaren-Mercedes":
+                            Console.ForegroundColor = ConsoleColor.DarkYellow;
+                            break;
+                        case "Racing Bulls-Honda RBPT":
+                            Console.ForegroundColor = ConsoleColor.DarkBlue;
+                            break;
+                        case "Mercedes":
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            break;
+                        case "Aston Martin Aramco-Mercedes":
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                            break;
+                        case "Alpine-Renault":
+                            Console.ForegroundColor = ConsoleColor.Magenta;
+                            break;
+                        case "Haas-Ferrari":
+                            Console.ForegroundColor = ConsoleColor.White;
+                            break;
+                        case "Williams":
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            break;
+                        case "Visa Cash App Racing Bulls":
+                            Console.ForegroundColor = ConsoleColor.DarkCyan;
+                            break;
+                        case "Kick Sauber":
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            break;
+                    }
+                    Console.WriteLine(index + ". " + currentTeam.TeamName + " (" + currentTeam.Drivers[0].Name + ", " + currentTeam.Drivers[1].Name + ") " + "Total Points: " + item);
+                    Console.ResetColor();
                 }
 
                 Console.WriteLine();
-                Console.WriteLine("**********************************");
-                Console.WriteLine("Egyéni Világbajnokság végeredmény:");
-                Console.WriteLine("**********************************");
+                Console.WriteLine("*******************************************");
+                Console.WriteLine("Egyéni Világbajnokság végeredmény (Top 10):");
+                Console.WriteLine("*******************************************");
                 Console.WriteLine();
                 index = 0;
                 foreach (int item in CseresRendez2(driverStanding))
                 {
                     //Console.WriteLine(item);
-                    index++;
-                    Driver currentdriver = SearchDriverbyPoint(item);
+                    if (index < 10)
+                    {
+                        index++;
+                        Driver currentdriver = SearchDriverbyPoint(item);
 
-                    Console.WriteLine(index + ". " + currentdriver.Name + " Total Points: " + currentdriver.Points);
+                        Console.WriteLine(index + ". " + currentdriver.Name + " Total Points: " + currentdriver.Points);
+                    }
+                    
                 }
                 Console.ReadLine();
                 return true;
@@ -450,6 +493,7 @@ namespace F1
         static void OneRound(int roundnumber)
         {
             Random rnd = new Random();
+            int weather = 0;
             for (int j = 0; j < 10; j++)
             {
                 foreach (var item in teams[j].Drivers)
@@ -458,13 +502,40 @@ namespace F1
                 }
             }
 
+            weather = rnd.Next(0, 100);
+            Console.WriteLine("Időjárás: ");
+            if (weather >= 40)
+            {
+                Console.WriteLine(" - Tiszta");
+            }
+            else if (weather >= 20)
+            {
+                Console.WriteLine(" - Enyhén esős");
+            }
+            else
+            {
+                Console.WriteLine(" - Zuhogó eső");
+            }
             for (int i = 0; i < tracks[roundnumber].Laps; i++)
             {
+
                 for (int j = 0; j < 10; j++)
                 {                    
                     foreach (var item in teams[j].Drivers)
                     {
                         item.CurrentTime += rnd.Next(TimeToSeconds(tracks[roundnumber].BestLapTime)*1000, TimeToSeconds(tracks[roundnumber].WorstLapTime)*1000-item.DriverLevel*200);
+                        if (weather >= 40)
+                        {
+                            item.CurrentTime += 2000;
+                        }
+                        else if (weather >=20)
+                        {
+                            item.CurrentTime += 3000;
+                        }
+                        else
+                        {
+                            item.CurrentTime += 5000;
+                        }
                     }
                 }
             }
