@@ -1,56 +1,15 @@
-﻿namespace F1
+﻿using System.Text.RegularExpressions;
+
+namespace F1
 {
     internal class Program
     {
-        static void Main(string[] args)
-        {
-            DriversTeams();
-            Tracks();
-            
-        }
-        static void DriversTeams()
-        {
-            Team mclaren = new Team("McLaren-Mercedes");
-            mclaren.AddDriver(new Driver("Lando Norris",));
-            mclaren.AddDriver(new Driver("Oscar Piastri"));
-
-            Team ferrari = new Team("Ferrari");
-            ferrari.AddDriver(new Driver("Charles Leclerc"));
-            ferrari.AddDriver(new Driver("Lewis Hamilton"));
-
-            Team racingBulls = new Team("Racing Bulls-Honda RBPT");
-            racingBulls.AddDriver(new Driver("Max Verstappen"));
-            racingBulls.AddDriver(new Driver("Liam Lawson"));
-
-            Team mercedes = new Team("Mercedes");
-            mercedes.AddDriver(new Driver("George Russell"));
-            mercedes.AddDriver(new Driver("Andrea Kimi Antonelli"));
-
-            Team astonMartin = new Team("Aston Martin Aramco-Mercedes");
-            astonMartin.AddDriver(new Driver("Fernando Alonso"));
-            astonMartin.AddDriver(new Driver("Lance Stroll"));
-
-            Team alpine = new Team("Alpine-Renault");
-            alpine.AddDriver(new Driver("Pierre Gasly"));
-            alpine.AddDriver(new Driver("Jack Doohan"));
-
-            Team haas = new Team("Haas-Ferrari");
-            haas.AddDriver(new Driver("Esteban Ocon"));
-            haas.AddDriver(new Driver("Oliver Bearman"));
-
-            Team williams = new Team("Williams");
-            williams.AddDriver(new Driver("Alexander Albon"));
-            williams.AddDriver(new Driver("Carlos Sainz Jr."));
-        }
-
-        static void Tracks()
-        {
-            List<Track> tracks = new List<Track>()
+        static public Track[] tracks = 
                 {
                     new Track(
                         "Melbourne Circuit",
-                        TimeSpan.Parse("1:18.589"),
-                        TimeSpan.Parse("1:23.000"),
+                        "1:18.589",
+                        "1:23.000",
                         58,
                         new Dictionary<string, int>
                         {
@@ -62,8 +21,8 @@
                     ),
                     new Track(
                         "Bahrain International Circuit",
-                        TimeSpan.Parse("1:31.624"),
-                        TimeSpan.Parse("1:35.000"),
+                        "1:31.624",
+                        "1:35.000",
                         57,
                         new Dictionary<string, int>
                         {
@@ -75,8 +34,8 @@
                     ),
                     new Track(
                         "Jeddah Street Circuit",
-                        TimeSpan.Parse("1:28.215"),
-                        TimeSpan.Parse("1:32.000"),
+                        "1:28.215",
+                        "1:32.000",
                         50,
                         new Dictionary<string, int>
                         {
@@ -88,8 +47,8 @@
                     ),
                     new Track(
                         "Imola",
-                        TimeSpan.Parse("1:14.909"),
-                        TimeSpan.Parse("1:19.000"),
+                        "1:14.909",
+                        "1:19.000",
                         63,
                         new Dictionary<string, int>
                         {
@@ -101,8 +60,8 @@
                     ),
                     new Track(
                         "Monaco Grand Prix",
-                        TimeSpan.Parse("1:12.909"),
-                        TimeSpan.Parse("1:18.000"),
+                        "1:12.909",
+                        "1:18.000",
                         78,
                         new Dictionary<string, int>
                         {
@@ -114,8 +73,8 @@
                     ),
                     new Track(
                         "Silverstone Circuit",
-                        TimeSpan.Parse("1:24.080"),
-                        TimeSpan.Parse("1:29.000"),
+                        "1:24.080",
+                        "1:29.000",
                         52,
                         new Dictionary<string, int>
                         {
@@ -127,8 +86,8 @@
                     ),
                     new Track(
                         "Hungaroring",
-                        TimeSpan.Parse("1:14.458"),
-                        TimeSpan.Parse("1:18.000"),
+                        "1:14.458",
+                        "1:18.000",
                         70,
                         new Dictionary<string, int>
                         {
@@ -140,8 +99,8 @@
                     ),
                     new Track(
                         "Circuit de Spa-Francorchamps",
-                        TimeSpan.Parse("1:46.286"),
-                        TimeSpan.Parse("1:51.000"),
+                        "1:46.286",
+                        "1:51.000",
                         44,
                         new Dictionary<string, int>
                         {
@@ -153,8 +112,8 @@
                     ),
                     new Track(
                         "Zandvoort",
-                        TimeSpan.Parse("1:10.576"),
-                        TimeSpan.Parse("1:15.000"),
+                        "1:10.576",
+                        "1:15.000",
                         72,
                         new Dictionary<string, int>
                         {
@@ -166,8 +125,8 @@
                     ),
                     new Track(
                         "Monza",
-                        TimeSpan.Parse("1:19.072"),
-                        TimeSpan.Parse("1:23.000"),
+                        "1:19.072",
+                        "1:23.000",
                         53,
                         new Dictionary<string, int>
                         {
@@ -179,8 +138,8 @@
                     ),
                     new Track(
                         "Singapore Grand Prix",
-                        TimeSpan.Parse("1:36.015"),
-                        TimeSpan.Parse("1:42.000"),
+                        "1:36.015",
+                        "1:42.000",
                         61,
                         new Dictionary<string, int>
                         {
@@ -192,8 +151,8 @@
                     ),
                     new Track(
                         "Suzuka Circuit",
-                        TimeSpan.Parse("1:30.805"),
-                        TimeSpan.Parse("1:35.000"),
+                        "1:30.805",
+                        "1:35.000",
                         53,
                         new Dictionary<string, int>
                         {
@@ -205,8 +164,8 @@
                     ),
                     new Track(
                         "Austin Circuit",
-                        TimeSpan.Parse("1:34.029"),
-                        TimeSpan.Parse("1:39.000"),
+                        "1:34.029",
+                        "1:39.000",
                         56,
                         new Dictionary<string, int>
                         {
@@ -218,8 +177,8 @@
                     ),
                     new Track(
                         "Interlagos",
-                        TimeSpan.Parse("1:10.540"),
-                        TimeSpan.Parse("1:15.000"),
+                        "1:10.540",
+                        "1:15.000",
                         71,
                         new Dictionary<string, int>
                         {
@@ -231,8 +190,8 @@
                     ),
                     new Track(
                         "Abu Dhabi Circuit",
-                        TimeSpan.Parse("1:34.790"),
-                        TimeSpan.Parse("1:39.000"),
+                        "1:34.790",
+                        "1:39.000",
                         58,
                         new Dictionary<string, int>
                         {
@@ -243,6 +202,317 @@
                         19.0
                     )
                 };
+        static public List<Team> teams = new List<Team>()
+        {
+
+        };
+        static void Main(string[] args)
+        {
+            
+            DriversTeams();
+            for (int i = 0; i < tracks.Length; i++)
+            {
+                //Console.WriteLine(TimeToSeconds(tracks[i].BestLapTime));
+                tracks[i].DisplayTrackInfo();
+                OneRound(i);
+            }
+
+            int[] driverStanding = new int[20];
+            int[] constructorStanding = new int[10];
+            int index = -1;
+
+            for (int j = 0; j < 10; j++)
+            {
+                foreach (var item in teams[j].Drivers)
+                {
+                    index++;
+                    driverStanding[index] = item.Points;
+                }
+            }
+
+            for (int j = 0; j < 10; j++)
+            {
+                constructorStanding[j] = teams[j].Drivers[0].Points + teams[j].Drivers[1].Points;
+                
+            }
+            Console.WriteLine();
+            Console.WriteLine("****************************************");
+            Console.WriteLine("Konstruktőri Világbajnokság végeredmény:");
+            Console.WriteLine("****************************************");
+            Console.WriteLine();
+            index = 0;
+            foreach (var item in CseresRendez2(constructorStanding))
+            {
+                index++;
+                Team currentTeam = SearchTeambyPoint(item);
+                Console.WriteLine(index + ". " + currentTeam.TeamName + " " + item);
+
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("**********************************");
+            Console.WriteLine("Egyéni Világbajnokság végeredmény:");
+            Console.WriteLine("**********************************");
+            Console.WriteLine();
+            index = 0;
+            foreach (int item in CseresRendez2(driverStanding))
+            {
+                Console.WriteLine(item);
+                index++;
+                Driver currentdriver = SearchDriverbyPoint(item);
+
+                Console.WriteLine(index + ". " + currentdriver.Name + " Total Points: " + currentdriver.Points);
+            }
+
+            
+
+        }
+        static void DriversTeams()
+        {
+            Team mclaren = new Team("McLaren-Mercedes");
+            Team ferrari = new Team("Ferrari");
+            Team racingBulls = new Team("Racing Bulls-Honda RBPT");
+            Team mercedes = new Team("Mercedes");
+            Team astonMartin = new Team("Aston Martin Aramco-Mercedes");
+            Team alpine = new Team("Alpine-Renault");
+            Team haas = new Team("Haas-Ferrari");
+            Team williams = new Team("Williams");
+            Team vcarb = new Team("Visa Cash App Racing Bulls");
+            Team sauber = new Team("Kick Sauber");
+
+            teams.Add(mclaren);
+            teams.Add(ferrari);
+            teams.Add(racingBulls);
+            teams.Add(mercedes);
+            teams.Add(astonMartin);
+            teams.Add(alpine);
+            teams.Add(haas);
+            teams.Add(williams);
+            teams.Add(vcarb);
+            teams.Add(sauber);
+
+            mclaren.AddDriver(new Driver("Lando Norris",8,0));
+            mclaren.AddDriver(new Driver("Oscar Piastri", 8, 0));
+
+            ferrari.AddDriver(new Driver("Charles Leclerc", 9, 0));
+            ferrari.AddDriver(new Driver("Lewis Hamilton", 9, 0));
+
+            racingBulls.AddDriver(new Driver("Max Verstappen", 9, 0));
+            racingBulls.AddDriver(new Driver("Liam Lawson", 6, 0));
+
+            mercedes.AddDriver(new Driver("George Russell", 8, 0));
+            mercedes.AddDriver(new Driver("Andrea Kimi Antonelli", 6, 0));
+
+            astonMartin.AddDriver(new Driver("Fernando Alonso", 7, 0));
+            astonMartin.AddDriver(new Driver("Lance Stroll", 5, 0));
+
+            alpine.AddDriver(new Driver("Pierre Gasly", 7, 0));
+            alpine.AddDriver(new Driver("Jack Doohan", 5, 0));
+
+            haas.AddDriver(new Driver("Esteban Ocon", 7, 0));
+            haas.AddDriver(new Driver("Oliver Bearman", 6, 0));
+
+            williams.AddDriver(new Driver("Alexander Albon", 7, 0));
+            williams.AddDriver(new Driver("Carlos Sainz Jr.", 7, 0));
+
+            vcarb.AddDriver(new Driver("Yuki Tsunoda", 6, 0));
+            vcarb.AddDriver(new Driver("Isack Hadjar", 5, 0));
+
+            sauber.AddDriver(new Driver("Nico Hulkenberg", 6, 0));
+            sauber.AddDriver(new Driver("Gabriel Bortoleto", 6, 0));
+
+
+        }
+
+        static Team SearchTeambyPoint(int point)
+        {
+            for (int j = 0; j < 10; j++)
+            {
+                if (teams[j].Drivers[0].Points + teams[j].Drivers[1].Points == point)
+                {
+                    return teams[j];
+                }
+                
+            }
+            return null;
+        }
+
+        static Driver SearchDriverbyPoint(int point)
+        {
+            for (int j = 0; j < 10; j++)
+            {
+                foreach (var item in teams[j].Drivers)
+                {
+                    if (item.Points == point)
+                    {
+                        return item;
+                    }
+                }
+            }
+            return null;
+        }
+
+        static Driver SearchDriverbyTime(int time)
+        {
+            for (int j = 0; j < 10; j++)
+            {
+                foreach (var item in teams[j].Drivers)
+                {
+                    if (item.CurrentTime == time)
+                    {
+                        return item;
+                    }
+                }
+            }
+            return null;
+        }
+
+        public static int[] CseresRendez(int[] bemenet)
+        {
+            int[] tomb = new int[bemenet.Length];
+            Array.Copy(bemenet, tomb, bemenet.Length);
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                for (int j = 0; j < tomb.Length; j++)
+                {
+                    if (tomb[i] < tomb[j])
+                    {
+                        var tmp = tomb[i];
+                        tomb[i] = tomb[j];
+                        tomb[j] = tmp;
+                    }
+                }
+            }
+            return tomb;
+        }
+
+        public static int[] CseresRendez2(int[] bemenet)
+        {
+            int[] tomb = new int[bemenet.Length];
+            Array.Copy(bemenet, tomb, bemenet.Length);
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                for (int j = 0; j < tomb.Length; j++)
+                {
+                    if (tomb[i] > tomb[j])
+                    {
+                        var tmp = tomb[i];
+                        tomb[i] = tomb[j];
+                        tomb[j] = tmp;
+                    }
+                }
+            }
+            return tomb;
+        }
+
+        static int TimeToSeconds(string time)
+        {
+            string[] time1 = time.Split(':');
+            string[] time2 = time1[1].Split('.');
+
+            int minutes = int.Parse(time1[0]);
+            int seconds = int.Parse(time2[0]);
+            int milliseconds = int.Parse(time2[1]);
+
+            int totalSeconds = (minutes * 60 + seconds + milliseconds / 1000);
+            return totalSeconds;
+        }
+
+        static string SecondsToTime(double totalTime)
+        {
+            int hours = (int)(totalTime / 3600);
+            int minutes = (int)((totalTime % 3600) / 60);
+            int seconds = (int)(totalTime % 60);
+            int milliseconds = (int)((totalTime - (int)totalTime) * 1000);
+
+            string formattedTime = string.Format("{0}:{1:D2}.{2:D3}", hours, minutes, seconds * 1000 + milliseconds);
+            return formattedTime;
+        }
+
+        static void OneRound(int roundnumber)
+        {
+            Random rnd = new Random();
+            for (int j = 0; j < 10; j++)
+            {
+                foreach (var item in teams[j].Drivers)
+                {
+                    item.CurrentTime = 0;
+                }
+            }
+
+            for (int i = 0; i < tracks[roundnumber].Laps; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {                    
+                    foreach (var item in teams[j].Drivers)
+                    {
+                        item.CurrentTime += rnd.Next(TimeToSeconds(tracks[roundnumber].BestLapTime)*1000, TimeToSeconds(tracks[roundnumber].WorstLapTime)*1000-item.DriverLevel*200);
+                    }
+                }
+            }
+
+            int[] finalTimes = new int[20];
+            int count = -1;
+
+            for (int j = 0; j < 10; j++)
+            {
+                //Console.WriteLine();
+                //Console.WriteLine(teams[j].TeamName);
+                //Console.WriteLine();
+
+                foreach (var item in teams[j].Drivers)
+                {
+                    count++;
+                    //Console.Write(item.Name + ": ");
+                    //Console.WriteLine(item.CurrentTime / 1000.000);
+                    finalTimes[count] = item.CurrentTime;
+                }
+            }
+
+            count = 0;
+            Console.WriteLine();
+            foreach (int item in CseresRendez(finalTimes))
+            {
+                count++;
+                Driver currentdriver = SearchDriverbyTime(item);
+
+                switch (count)
+                {
+                    case 1:
+                        currentdriver.Points += 25;
+                        break;
+                    case 2:
+                        currentdriver.Points += 18;
+                        break;
+                    case 3:
+                        currentdriver.Points += 15;
+                        break;
+                    case 4:
+                        currentdriver.Points += 12;
+                        break;
+                    case 5:
+                        currentdriver.Points += 10;
+                        break;
+                    case 6:
+                        currentdriver.Points += 8;
+                        break;
+                    case 7:
+                        currentdriver.Points += 6;
+                        break;
+                    case 8:
+                        currentdriver.Points += 4;
+                        break;
+                    case 9:
+                        currentdriver.Points += 2;
+                        break;
+                    case 10:
+                        currentdriver.Points += 1;
+                        break;
+                }
+
+
+                Console.WriteLine(count + ". " + currentdriver.Name + ": " + SecondsToTime(currentdriver.CurrentTime/1000.000) + " Total Points: " + currentdriver.Points);
+                }
         }
     }
 }

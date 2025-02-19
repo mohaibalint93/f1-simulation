@@ -1,0 +1,15 @@
+E:\Prog\f1-simulation\F1\obj\Debug\net8.0\F1.GeneratedMSBuildEditorConfig.editorconfig
+E:\Prog\f1-simulation\F1\obj\Debug\net8.0\F1.AssemblyInfoInputs.cache
+E:\Prog\f1-simulation\F1\obj\Debug\net8.0\F1.AssemblyInfo.cs
+E:\Prog\f1-simulation\F1\obj\Debug\net8.0\F1.csproj.CoreCompileInputs.cache
+E:\Prog\f1-simulation\F1\obj\Debug\net8.0\F1.sourcelink.json
+E:\Prog\f1-simulation\F1\bin\Debug\net8.0\F1.exe
+E:\Prog\f1-simulation\F1\bin\Debug\net8.0\F1.deps.json
+E:\Prog\f1-simulation\F1\bin\Debug\net8.0\F1.runtimeconfig.json
+E:\Prog\f1-simulation\F1\bin\Debug\net8.0\F1.dll
+E:\Prog\f1-simulation\F1\bin\Debug\net8.0\F1.pdb
+E:\Prog\f1-simulation\F1\obj\Debug\net8.0\F1.dll
+E:\Prog\f1-simulation\F1\obj\Debug\net8.0\refint\F1.dll
+E:\Prog\f1-simulation\F1\obj\Debug\net8.0\F1.pdb
+E:\Prog\f1-simulation\F1\obj\Debug\net8.0\F1.genruntimeconfig.cache
+E:\Prog\f1-simulation\F1\obj\Debug\net8.0\ref\F1.dll

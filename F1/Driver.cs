@@ -11,12 +11,14 @@ namespace F1
         public string Name { get; set; }
         public int Points { get; set; }
         public int DriverLevel { get; set; }
+        public int CurrentTime { get; set; }
 
-        public Driver(string name, int driverlevel)
+        public Driver(string name, int driverlevel, int time)
         {
             Name = name;
             Points = 0;
             DriverLevel = driverlevel;
+            CurrentTime = time;
         }
     }
 }

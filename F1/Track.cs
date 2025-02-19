@@ -9,13 +9,13 @@ namespace F1
     internal class Track
     {
         public string Name { get; set; }
-        public TimeSpan BestLapTime { get; set; }
-        public TimeSpan WorstLapTime { get; set; }
-        public Dictionary<string, int> TireWear { get; set; }  // Gumikeverékek átlagos kopása (körök számában)
-        public int Laps { get; set; }  // Pálya hossza (körök száma)
-        public double PitStopTime { get; set; }  // Kerékcsere átlagos időtartama (másodpercekben)
+        public string BestLapTime { get; set; }
+        public string WorstLapTime { get; set; }
+        public Dictionary<string, int> TireWear { get; set; }  
+        public int Laps { get; set; }  
+        public double PitStopTime { get; set; }  
 
-        public Track(string name, TimeSpan bestLapTime, TimeSpan worstLapTime, int laps, Dictionary<string, int> tireWear, double pitStopTime)
+        public Track(string name, string bestLapTime, string worstLapTime, int laps, Dictionary<string, int> tireWear, double pitStopTime)
         {
             Name = name;
             BestLapTime = bestLapTime;
@@ -25,9 +25,10 @@ namespace F1
             PitStopTime = pitStopTime;
         }
 
-        // Pálya információinak kiíratása
+        
         public void DisplayTrackInfo()
         {
+            Console.WriteLine();
             Console.WriteLine($"Pálya: {Name}");
             Console.WriteLine($"Legjobb köridő (2024): {BestLapTime}");
             Console.WriteLine($"Legrosszabb köridő (2024): {WorstLapTime}");
